@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_tasks"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_light"
+    android:fitsSystemWindows="true"
+    android:layout_gravity="top"
+    android:gravity="center"
+    tools:context=".ui.main.view.fragment.TaskFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="0sp"
+        android:paddingEnd="0sp"
+        android:orientation="vertical"
+        android:paddingBottom="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:background="@android:color/transparent"
+            app:contentInsetStartWithNavigation="0dp"
+            app:titleTextAppearance="@style/ActionBar.toolbarTheme"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="0dip"
+                android:layout_marginEnd="0dip"
+                android:layout_marginBottom="0dip"
+                android:orientation="horizontal"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="left"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    tools:ignore="Suspicious0dp">
+                    <TextView
+                        android:visibility="visible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textStyle="bold"
+                        android:textSize="26dp"
+                        android:textColor="@color/white"
+                        android:text="Fleet Report"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="2"
+                        android:drawableLeft="@drawable/ic_time"
+                        android:drawablePadding="10dp"/>
+                    <androidx.appcompat.widget.SearchView
+                        android:visibility="visible"
+                        android:id="@+id/et_search_todo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="left"
+                        android:textSize="18dp"
+                        android:drawableRight="@drawable/ic_search"
+                        android:drawablePadding="10dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_gravity="right"
+                        android:hint="Search"
+                        android:layoutDirection="rtl"
+                        app:queryBackground="@drawable/bg_rounded_white"
+                        app:iconifiedByDefault="true"
+                        app:searchIcon="@drawable/ic_search_white"
+                        app:tint="@color/red" />
+                    <androidx.appcompat.widget.SearchView
+                        android:visibility="gone"
+                        android:id="@+id/et_search_doing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="left"
+                        android:textSize="18dp"
+                        android:drawableRight="@drawable/ic_search"
+                        android:drawablePadding="10dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_gravity="right"
+                        android:hint="Search"
+                        android:layoutDirection="rtl"
+                        app:queryBackground="@drawable/bg_rounded_white"
+                        app:iconifiedByDefault="true"
+                        app:searchIcon="@drawable/ic_search_white"
+                        app:tint="@color/red" />
+                    <androidx.appcompat.widget.SearchView
+                        android:visibility="gone"
+                        android:id="@+id/et_search_done"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="left"
+                        android:textSize="18dp"
+                        android:drawableRight="@drawable/ic_search"
+                        android:drawablePadding="10dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_gravity="right"
+                        android:hint="Search"
+                        android:layoutDirection="rtl"
+                        app:queryBackground="@drawable/bg_rounded_white"
+                        app:iconifiedByDefault="true"
+                        app:searchIcon="@drawable/ic_search_dark"
+                        app:tint="@color/red" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="left|center_vertical"
+                    android:orientation="horizontal"
+                    tools:ignore="Suspicious0dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icon_share"
+                        android:layout_gravity="center"
+                        android:id="@+id/iv_share"
+                        android:contentDescription="notification" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:id="@+id/rl_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="0dp"
+            android:paddingEnd="0dp"
+            android:clipChildren="false">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="0dip"
+                android:layout_marginEnd="0dip"
+                android:layout_marginBottom="0dip"
+                android:orientation="vertical"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp">
+
+                <!-- start contact selected -->
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_grey"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="0dip"
+                    android:layout_marginBottom="10dip"
+                    android:orientation="horizontal"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:layout_gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        tools:ignore="Suspicious0dp">
+                        <TextView
+                            android:visibility="visible"
+                            android:id="@+id/tv_filter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:gravity="left"
+                            android:textSize="18dp"
+                            android:drawableRight="@drawable/icon_down_small"
+                            android:drawablePadding="10dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_gravity="right"
+                            android:text="All Tasks"
+                            app:tint="@color/grey"
+                            tools:ignore="UseAppTint" />
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/tv_filter_doing"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:gravity="left"
+                            android:textSize="18dp"
+                            android:drawableRight="@drawable/icon_down_small"
+                            android:drawablePadding="10dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_gravity="right"
+                            android:text="All Tasks"
+                            app:tint="@color/grey"
+                            tools:ignore="UseAppTint" />
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/tv_filter_done"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:gravity="left"
+                            android:textSize="18dp"
+                            android:drawableRight="@drawable/icon_down_small"
+                            android:drawablePadding="10dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_gravity="right"
+                            android:text="All Tasks"
+                            app:tint="@color/grey"
+                            tools:ignore="UseAppTint" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!-- end contact selected -->
+
+                <!-- start category selected -->
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_grey"
+                    android:layout_marginStart="15dip"
+                    android:layout_marginEnd="15dip"
+                    android:layout_marginTop="0dip"
+                    android:layout_marginBottom="10dip"
+                    android:orientation="horizontal"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:layout_gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        tools:ignore="Suspicious0dp">
+                        <TextView
+                            android:visibility="visible"
+                            android:id="@+id/tv_category"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:gravity="left"
+                            android:textSize="18dp"
+                            android:drawableRight="@drawable/icon_down_small"
+                            android:drawablePadding="10dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_gravity="right"
+                            android:text="All Category"
+                            app:tint="@color/grey"
+                            tools:ignore="UseAppTint" />
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/tv_category_doing"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:gravity="left"
+                            android:textSize="18dp"
+                            android:drawableRight="@drawable/icon_down_small"
+                            android:drawablePadding="10dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_gravity="right"
+                            android:text="All Category"
+                            app:tint="@color/grey"
+                            tools:ignore="UseAppTint" />
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/tv_category_done"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:gravity="left"
+                            android:textSize="18dp"
+                            android:drawableRight="@drawable/icon_down_small"
+                            android:drawablePadding="10dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_gravity="right"
+                            android:text="All Category"
+                            app:tint="@color/grey"
+                            tools:ignore="UseAppTint" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!-- end contact selected -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <com.google.android.material.appbar.AppBarLayout
+                        android:id="@+id/appBarLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                        app:elevation="0dp">
+
+                        <com.google.android.material.tabs.TabLayout
+                            android:visibility="visible"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginRight="0dp"
+                            android:layout_marginBottom="0dip"
+                            android:background="@color/white"
+                            app:tabIndicatorColor="@color/com_facebook_blue"
+                            app:tabIndicatorHeight="3dp"
+                            app:tabMode="fixed"
+                            app:tabGravity="fill"
+                            app:tabTextAppearance="@style/tab_text"
+                            app:tabTextColor="@color/grey"
+                            app:tabSelectedTextColor="@color/com_facebook_blue"
+                            android:id="@+id/tab_layout_id"/>
+
+                    </com.google.android.material.appbar.AppBarLayout>
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_gravity="center"
+                        android:gravity="bottom|center_vertical"
+                        android:background="@android:color/transparent"
+                        android:id="@+id/view_pager_id"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- start floating adding -->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_add_tasks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:layout_gravity="center|bottom">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/add_taks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_plus_white"
+                    android:layout_marginEnd="20dp"
+                    app:backgroundTint="@color/blue"
+                    app:fabCustomSize="60dp"
+                    app:maxImageSize="25dp"
+                    app:tint="@color/white"
+                    app:elevation="6dp"
+                    app:borderWidth="0dp"
+                    android:contentDescription="Add Contact" />
+            </LinearLayout>
+            <!-- end floating adding -->
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/llProgressBar"
+        android:visibility="gone"
+        layout="@layout/layout_progress"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

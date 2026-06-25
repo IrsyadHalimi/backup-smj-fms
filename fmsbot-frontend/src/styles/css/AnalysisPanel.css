@@ -1,0 +1,51 @@
+.analysis-panel {
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 16px;
+
+  padding: 20px;
+
+  height: 100%;
+}
+
+.analysis-title {
+
+  font-weight: 700;
+
+  margin-bottom: 20px;
+}
+
+.analysis-section {
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  margin-bottom: 15px;
+
+  background: #0f1d30;
+}
+
+.analysis-section h4 {
+
+  color: #00d084;
+
+  margin-bottom: 10px;
+}
+
+.analysis-section.danger h4 {
+  color: #ff4d4f;
+}
+
+.analysis-section p,
+.analysis-section li {
+
+  color: #aeb9c7;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}

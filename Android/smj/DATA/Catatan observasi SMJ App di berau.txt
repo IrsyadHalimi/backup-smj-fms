@@ -1,0 +1,107 @@
+Catatan observasi SMJ App di berau
+
+1. potensi issue terhadap perangkat HP pengguna
+   - koneksi internet
+   - batre low
+   - pencahayaan layer hp
+
+2. potensi issue pada aplikasi
+   - perlu strategi sincronize antara feature aplikasi dan kebutuhan pengguna dilapangan
+   
+
+
+Catatan sementara setelah observasi di pit 50
+
+1. Opsi offline/pending report jadi opsi utama
+2. Opsi penyediaan jaringan menggunakan starling
+3. Potensial issue pada perangkat hp user
+4. Perlu waktu testing yg cukup agar aplikasi minim bugs
+5. Pencahayaan layar hp bisa jadi kendala
+6. Perlu ada transisi pencatatan manual ke digital
+7. Sinyal xl masih terdeteksi di front pit 50
+8. Ada request dari pak ikhsan terkait warna aplikasi
+9. Request menampilkan grafik ritase
+10. Kendala krusial di lapangan sementara yang terpantau soal target ritase
+11. Perpindahan exa di tentukan oleh level spi ke atas
+12. Penambahan unit bisa di lakukan level foreman/pengawas
+13. Perlu ada training atau edukasi sebeblum implementasi di lapangan (opsional dan sesuai kebijakan)
+
+
+pertanyaan
+1. mulai operasi awal shift (ditentukan oleh excavator yang ready atau pengawas sudah berada di lapangan)
+
+Catatan Metting 08/09/2024 jam 20:00 s/d 21:30
+#Tema metting khusus IT : (Fixing feature dan tampilan antar muka pencatatan ritase)
+
+1. Ditambahkan tombol undo saat proses pencatan ritase (Produksi) - DONE
+2. Ditambahkan form catatan tambahan di list circle time (produksi) - DONE
+3. Ditampilkan perhitungan rata circle time pada laporan fleet dan hauler - DONE
+4. Ditambah notifikasi warna pada tombol saat pencacatan time ritase yang paling terakhir sebagai penanda - DONE
+5. Tambahan opsional untuk rekam GPS unit (Enginering) - Perlu meeting dengan enginer
+6. Ditampilkan remark bila ada catatan pada pencacatan time ritase (MCC) - DONE
+
+Skenario GO LIVE
+1. Di awal-awal GO Live aplikasi akan di prioritaskan pada transaksi ritase dengan level foreman s/d SPV sebagai kolekting data / pencatatan
+2. level SPI dan di atas nya dapat memantau bisnis proses pencatatan ritase pada level Foreman s/d SPV
+3. Data Ritase bersifat temporary pada google cloud / firebase
+4. Data Ritase akan di backup per hari ke local PC lewat RestAPI
+5. Data Ritase akan di Kelola oleh MCC secara offline menggunakan desktop
+
+Kebutuhan support go live
+1. PC dan monitor sebagai backbone penyimpanan data local
+
+Next Develop
+1. Dashboard (jika diPerlukan, maka perlu spesifikasikan lagi kebutuhannya, baik untuk BOD dan MCC)
+2. pada menu worker bisa di kembangkan menjadi management pengelolaan data karyawan pada site (system HR di site)
+3. pada menu unit bisa di kembangkan menjadi management pengelolaan data asset/unit (system RM)
+
+Catatan Metting 30/09/2024 
+1. di heading per jam
+2. tulisan plan diganti target
+3. bcm di tampilkan
+4. loading time jalan terus
+5. loading time di mulai pada saat hidupkan excavator dan berhenti pada saat BD atau selesai shift
+6. pemyesuaian Waktu waiting loading time
+
+Catatan Trial 06-10-2024
+
+1. Pengawas merasa ribet gunakan aplikasi sambil mengarahkan HD
+   Solusi: perlu Waktu untuk pembiasaan
+2. Pengawas hawatir hitungan rotasinya ada selisih hitung dengan operator
+   Solusi: Programer perlu diskusi dengan leader terkait validasi, kroscek dan apakah diperbolehkan ada perbaikan, jika boleh otoritas di berikan kepada siapa
+3. Pengawas menginfokan Lost Time tidak bisa di atur (Misal ada kendala di loading point atau perbaikan loading point atau pindah loading point)
+   Solusi: Programer perlu meminta pendapat leader, terkait feature pencatatan lost time dan programmer akan memperbaiki manual book nya
+4. Total hitung pada aplikasi 121 (-2) dari total hitung berkas manual 123
+   keterangan: 
+     - selisih terjadi pada HD465-18 dengan operator indra maulana 
+     - 1 tercatat pada remark pada 02:00 - 03:00
+     - 1 tidak tercatat pada 04:00 - 05:00
+
+Catatan Trial 07-10-2024
+
+1. Pengawas masih suka beda persepsi penamaan hauler
+   Solusi: Perlu ada admin khusus untuk mengelola data hauler lewat aplikasi
+2. Pengawas masih suka salah cari nama operator di pencarian aplikasi
+   Solusi: Perlu ada admin khusus untuk mengelola data karyawan lewat aplikasi
+3. Saran solusi secara keseluruhan: Perlu ada admin yang mengelola data fleet di setiap shift
+4. Total hitung pada aplikasi 132 (-23) dari total hitung berkas manual 155
+   keterangan: 
+     - selisih terjadi pada semua hauler
+     - selisih terjadi karena pengawas stop gunakan aplikasi pada 04:30 sampai selesai shift
+     - informasi pengawas terhenti karena loading lumpur
+
+
+
+Catatan meeting 09-10-2024
+1. perubahan start shift tanpa pilihan remark
+2. peribahan stop shift tanpa pilihan remark
+3. tambahan remark Ketika remark masih berjalan
+4. setiap remark memiliki timestamp otomatis
+5. automatis take out shift
+6. popup warning shift akan berakhir
+
+
+
+
+
+

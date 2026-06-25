@@ -1,0 +1,34 @@
+1. User Management
+2. Master Data
+3. Feature
+
+
+catatan:
+
+Dayli report
+field Fleet = Plan, 1 fleet ada beberapa alat berat tergantung kebutuhan
+field Harian = target pencapaian
+field MTD = Month to Date (Hadrian)
+field Pagi, Malam = actual
+
+field Rain: total jam hujan (hanya pencatatan)
+field slippery: total beropersi lagi setelah hujan (hanya pencatatan)
+
+Stock Jetty : stock batu bara (proses hitung manual)
+
+angka-angka OB di dapat dari pengawas
+Total BCM pengali tergantung UNIT
+
+1 fleet bisa 2 disposal (area dumpingan) 
+Jarak galian OB dengan disposal di hitung ulang tiap pekan
+
+start awal aplikasi: MCC (settings)
+actual pengawasan di approve PM
+
+
+Rumus2
+SR=String rasio (OB/BB)
+FR=Fill Rasio  (target 0.85) catatan: dapat berubah tergantung BOD
+
+
+

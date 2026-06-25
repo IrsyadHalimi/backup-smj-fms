@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:layout_gravity="top"
+    android:gravity="center"
+    tools:context=".ui.contact.view.DetailContactActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="0sp"
+        android:paddingEnd="0sp"
+        android:orientation="vertical"
+        android:paddingBottom="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dip"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:background="@android:color/transparent"
+            app:titleTextAppearance="@style/ActionBar.toolbarTheme"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="0dip"
+                android:layout_marginEnd="0dip"
+                android:layout_marginBottom="0dip"
+                android:orientation="horizontal"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    tools:ignore="Suspicious0dp">
+                    <TextView
+                        android:visibility="visible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="@color/black"
+                        android:text="View Contact"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    tools:ignore="Suspicious0dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="0dp"
+                        android:id="@+id/delete"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:layout_gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        tools:ignore="Suspicious0dp">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="0dp"
+                            android:src="@drawable/ic_trash"
+                            android:layout_gravity="center"
+                            android:contentDescription="notification" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/edit"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="0dp"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:layout_gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        tools:ignore="Suspicious0dp">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_edit"
+                            android:layout_marginEnd="0dp"
+                            android:layout_gravity="center"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_light"
+            android:layout_marginTop="10dp"
+            android:padding="0dip">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:isScrollContainer="true"
+                android:scrollbars="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="top"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:visibility="visible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:text="Contact Information"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_white"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:padding="20dp"
+                        android:orientation="vertical">
+
+                        <!-- Start Firstname -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:visibility="visible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center"
+                                android:layout_gravity="left"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textStyle="bold"
+                                android:textSize="14dp"
+                                android:textColor="@color/grey"
+                                android:text="Full Name"/>
+
+                            <EditText
+                                android:id="@+id/et_fullname"
+                                android:enabled="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:background="@android:color/transparent"/>
+
+
+                            <EditText
+                                android:visibility="gone"
+                                android:id="@+id/et_firstname"
+                                android:enabled="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:background="@android:color/transparent"/>
+
+                        </LinearLayout>
+                        <!-- End Firstname -->
+
+                        <!-- Start LastName -->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:visibility="visible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center"
+                                android:layout_gravity="left"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textStyle="bold"
+                                android:textSize="14dp"
+                                android:textColor="@color/grey"
+                                android:text="Last Name"/>
+
+                            <EditText
+                                android:id="@+id/et_lastname"
+                                android:enabled="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:background="@android:color/transparent"/>
+
+                        </LinearLayout>
+                        <!-- End LastName -->
+
+                        <!-- Start Email -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:visibility="visible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center"
+                                android:layout_gravity="left"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textStyle="bold"
+                                android:textSize="14dp"
+                                android:textColor="@color/grey"
+                                android:text="Email"/>
+
+                            <EditText
+                                android:id="@+id/et_email"
+                                android:enabled="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:background="@android:color/transparent"/>
+
+                        </LinearLayout>
+                        <!-- End Email -->
+
+                        <!-- Start Mobile -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:visibility="visible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center"
+                                android:layout_gravity="left"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textStyle="bold"
+                                android:textSize="14dp"
+                                android:textColor="@color/grey"
+                                android:text="Mobile"/>
+
+                            <EditText
+                                android:id="@+id/et_mobile"
+                                android:enabled="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:background="@android:color/transparent"/>
+
+                        </LinearLayout>
+                        <!-- End Mobile -->
+
+                        <!-- Start Source -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:visibility="visible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center"
+                                android:layout_gravity="left"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textStyle="bold"
+                                android:textSize="14dp"
+                                android:textColor="@color/grey"
+                                android:text="Source"/>
+
+                            <EditText
+                                android:id="@+id/et_source"
+                                android:enabled="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:background="@android:color/transparent"/>
+
+                        </LinearLayout>
+                        <!-- End Source -->
+
+                        <!-- Start Status -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:visibility="visible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center"
+                                android:layout_gravity="left"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textStyle="bold"
+                                android:textSize="14dp"
+                                android:textColor="@color/grey"
+                                android:text="Status"/>
+
+                            <EditText
+                                android:id="@+id/et_status"
+                                android:enabled="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:background="@android:color/transparent"/>
+
+                        </LinearLayout>
+                        <!-- End Status -->
+
+                        <!-- Start Prospect -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:visibility="visible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center"
+                                android:layout_gravity="left"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textStyle="bold"
+                                android:textSize="14dp"
+                                android:textColor="@color/grey"
+                                android:text="Prospect Quality"/>
+
+                            <EditText
+                                android:id="@+id/et_prospect"
+                                android:enabled="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:drawableLeft="@drawable/ic_star_color"
+                                android:drawablePadding="5dp"
+                                android:background="@android:color/transparent"/>
+
+                        </LinearLayout>
+                        <!-- End Prospect -->
+
+                        <!-- Start Birthday -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:visibility="visible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center"
+                                android:layout_gravity="left"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textStyle="bold"
+                                android:textSize="14dp"
+                                android:textColor="@color/grey"
+                                android:text="Birthday"/>
+
+                            <EditText
+                                android:id="@+id/et_birthday"
+                                android:enabled="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:background="@android:color/transparent"/>
+
+                        </LinearLayout>
+                        <!-- End Birthday -->
+
+                        <!-- Start Religion -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:visibility="visible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center"
+                                android:layout_gravity="left"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textStyle="bold"
+                                android:textSize="14dp"
+                                android:textColor="@color/grey"
+                                android:text="Religion"/>
+
+                            <EditText
+                                android:id="@+id/et_religion"
+                                android:enabled="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:background="@android:color/transparent"/>
+
+                        </LinearLayout>
+                        <!-- End Religion -->
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:visibility="visible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:text="Company Information"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_white"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:padding="20dp"
+                    android:orientation="vertical">
+
+                    <!-- Start Job Title -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            android:textColor="@color/grey"
+                            android:text="Job Title"/>
+
+                        <EditText
+                            android:id="@+id/et_job_title"
+                            android:enabled="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:background="@android:color/transparent"/>
+
+                    </LinearLayout>
+                    <!-- End Job Title -->
+
+                    <!-- Start Company Name -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            android:textColor="@color/grey"
+                            android:text="Company Name"/>
+
+                        <EditText
+                            android:id="@+id/et_company_name"
+                            android:enabled="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:background="@android:color/transparent"/>
+
+                    </LinearLayout>
+                    <!-- End Company Name -->
+
+                    <!-- Start Company Phone -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            android:textColor="@color/grey"
+                            android:text="Company Phone"/>
+
+                        <EditText
+                            android:id="@+id/et_company_phone"
+                            android:enabled="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:background="@android:color/transparent"/>
+
+                    </LinearLayout>
+                    <!-- End Company Phone -->
+
+                    <!-- Start Company Address -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            android:textColor="@color/grey"
+                            android:text="Company Address"/>
+
+                        <EditText
+                            android:id="@+id/et_company_address"
+                            android:enabled="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:background="@android:color/transparent"/>
+
+                    </LinearLayout>
+                    <!-- End Company Address -->
+
+                    <!-- Start Company State -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            android:textColor="@color/grey"
+                            android:text="Company State"/>
+
+                        <EditText
+                            android:id="@+id/et_company_state"
+                            android:enabled="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:background="@android:color/transparent"/>
+
+                    </LinearLayout>
+                    <!-- End Company State -->
+
+                    <!-- Start Company City -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            android:textColor="@color/grey"
+                            android:text="Company City"/>
+
+                        <EditText
+                            android:id="@+id/et_company_city"
+                            android:enabled="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:background="@android:color/transparent"/>
+
+                    </LinearLayout>
+                    <!-- End Company City -->
+
+                    <!-- Start Company PostalCode -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            android:textColor="@color/grey"
+                            android:text="Company Postal Code"/>
+
+                        <EditText
+                            android:id="@+id/et_company_postal_code"
+                            android:enabled="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:background="@android:color/transparent"/>
+
+                    </LinearLayout>
+                    <!-- End Company Postal Code -->
+
+                    <!-- Start Company Note -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            android:textColor="@color/grey"
+                            android:text="Note"/>
+
+                        <EditText
+                            android:id="@+id/et_company_note"
+                            android:enabled="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:background="@android:color/transparent"/>
+
+                    </LinearLayout>
+                    <!-- End Company Note -->
+
+                </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

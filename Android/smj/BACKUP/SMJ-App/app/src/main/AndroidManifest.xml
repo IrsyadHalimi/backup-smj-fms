@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.TransparentThemeLight"
+        tools:targetApi="34">
+        <activity
+            android:name=".ui.offline.view.activity.OfflineDashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.settings.activity.JobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.pengawas.view.activity.LostTimeListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.settings.activity.LabelingLostTimeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.activity.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.task.view.TimbunanListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.task.view.GalianListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.task.view.LocListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.task.view.ShiftListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.activity.SuspendActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.settings.activity.TimbunanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.settings.activity.GalianActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.settings.activity.LokasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.settings.activity.ShiftActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.pengawas.view.activity.PengawasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.activity.DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.activity.PendingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.task.view.NotificationTasksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.contact.view.NotificationContactsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.contact.view.PhoneBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.task.view.EditTaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.fleet.view.DetailProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.fleet.view.EditProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.contact.view.EditContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.contact.view.DetailContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.view.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.view.ForgotActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.task.view.ProductListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.task.view.ContactListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.fleet.view.AddFleetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.task.view.AddTaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.view.LoginActivity"
+            android:exported="false" />
+        <activity android:name=".ui.google.view.MapActivity" />
+        <activity
+            android:name=".ui.contact.view.AddContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.activity.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+    </application>
+
+</manifest>

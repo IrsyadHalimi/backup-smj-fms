@@ -1,0 +1,99 @@
+.date-picker-wrapper {
+  position: relative;
+  display: inline-block;
+  font-family: sans-serif;
+}
+
+.date-picker-trigger-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1e293b; /* Slate dark */
+  border: 1px solid #334155;
+  color: #f8fafc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.date-picker-trigger-btn:hover {
+  background-color: #334155;
+  border-color: #475569;
+}
+
+.date-picker-dropdown-card {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 1000;
+  background-color: #0f172a; /* Deep Cyber dark background */
+  border: 1px solid #1e293b;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  padding: 16px;
+  width: 280px;
+}
+
+.date-picker-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.date-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.date-input-group label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.date-input-group input[type="date"] {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.date-picker-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.date-picker-actions button {
+  padding: 6px 12px;
+  font-size: 0.815rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-cancel {
+  background-color: transparent;
+  color: #94a3b8;
+}
+.btn-cancel:hover { color: #fff; }
+
+.btn-apply {
+  background-color: #38bdf8; /* Sky Blue neon matched app vibe */
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-apply:hover { background-color: #7dd3fc; }

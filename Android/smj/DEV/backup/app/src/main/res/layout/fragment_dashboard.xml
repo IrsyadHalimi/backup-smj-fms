@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_light"
+    android:fitsSystemWindows="true"
+    android:layout_gravity="top"
+    android:gravity="center"
+    tools:context=".ui.main.view.fragment.DashboardFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="5sp"
+        android:paddingEnd="5sp"
+        android:orientation="vertical"
+        android:paddingBottom="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:background="@android:color/transparent"
+            app:contentInsetStartWithNavigation="0dp"
+            app:titleTextAppearance="@style/ActionBar.toolbarTheme"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="0dip"
+                android:layout_marginEnd="0dip"
+                android:layout_marginBottom="0dip"
+                android:orientation="horizontal"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="left"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    tools:ignore="Suspicious0dp">
+                    <TextView
+                        android:visibility="visible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textStyle="bold"
+                        android:textSize="26dp"
+                        android:textColor="@color/white"
+                        android:text="Dashboard"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="2"
+                        android:drawableLeft="@drawable/ic_dashboards"
+                        android:drawablePadding="5dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="left|center_vertical"
+                    android:orientation="horizontal"
+                    tools:ignore="Suspicious0dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_notification"
+                        android:layout_gravity="center"
+                        android:id="@+id/toolbar_title"
+                        android:contentDescription="notification"
+                        android:tint="@color/white"/>
+                    <TextView
+                        android:id="@+id/tv_notif_count"
+                        android:visibility="gone"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginTop="10dip"
+                        android:layout_marginLeft="-10dip"
+                        android:layout_marginBottom="5dip"
+                        android:paddingTop="2dip"
+                        android:paddingBottom="2dip"
+                        android:paddingLeft="2dip"
+                        android:paddingRight="2dip"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textStyle="bold"
+                        android:textSize="8dip"
+                        android:textColor="@color/white"
+                        android:background="@drawable/bg_rounded_red"
+                        android:text="0"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="left|center_vertical"
+                    android:orientation="horizontal"
+                    tools:ignore="Suspicious0dp">
+                    <ImageView
+                        android:id="@+id/iv_settings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_setting"
+                        android:layout_marginEnd="0dp"
+                        android:layout_gravity="center"
+                        app:tint="@color/black"
+                        tools:ignore="UseAppTint" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:id="@+id/rl_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="15dp"
+            android:paddingEnd="15dp"
+            android:clipChildren="false">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="0dip"
+                android:layout_marginEnd="0dip"
+                android:layout_marginBottom="0dip"
+                android:orientation="vertical"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp">
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_grey"
+                    android:layout_marginStart="0dip"
+                    android:layout_marginEnd="0dip"
+                    android:layout_marginBottom="0dip"
+                    android:orientation="horizontal"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:layout_gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        tools:ignore="Suspicious0dp">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:paddingStart="15dp"
+                            android:src="@drawable/ic_user"
+                            android:layout_gravity="left"
+                            android:contentDescription="notification" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="right"
+                        android:layout_gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        tools:ignore="Suspicious0dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:textSize="18dp"
+                            android:drawableRight="@drawable/icon_down_small"
+                            android:drawablePadding="10dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_gravity="right"
+                            android:text="My Dashboard"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_grey"
+                    android:layout_marginStart="0dip"
+                    android:layout_marginEnd="0dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginBottom="0dip"
+                    android:orientation="horizontal"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:layout_gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        tools:ignore="Suspicious0dp">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:paddingStart="10dp"
+                            android:src="@drawable/icon_chart_pie"
+                            android:layout_gravity="left"
+                            android:contentDescription="notification" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="right"
+                        android:layout_gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        tools:ignore="Suspicious0dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:textSize="18dp"
+                            android:drawableRight="@drawable/icon_down_small"
+                            android:drawablePadding="10dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_gravity="right"
+                            android:text="Activity"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_grey"
+                    android:layout_marginStart="0dip"
+                    android:layout_marginEnd="0dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginBottom="0dip"
+                    android:orientation="horizontal"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:layout_gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        tools:ignore="Suspicious0dp">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:paddingStart="15dp"
+                            android:src="@drawable/ic_calendar"
+                            android:layout_gravity="left"
+                            android:contentDescription="notification" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="right"
+                        android:layout_gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        tools:ignore="Suspicious0dp">
+                        <TextView
+                            android:id="@+id/tv_select_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:textSize="18dp"
+                            android:drawableRight="@drawable/icon_down_small"
+                            android:drawablePadding="10dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_gravity="right"
+                            android:text="Today"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingTop="0dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="0dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:layout_gravity="left"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="@color/black"
+                        android:text="Birthday"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_grey"
+                        android:layout_marginTop="0dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:id="@+id/iv_date"
+                            android:visibility="visible"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/grey_light"
+                            android:padding="10dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/roboto_regular"
+                            android:src="@drawable/icon_calendar"/>
+                        <TextView
+                            android:id="@+id/tv_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="visible"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dip"
+                    android:layout_marginEnd="0dip"
+                    android:layout_marginTop="0dip"
+                    android:layout_marginBottom="0dip"
+                    android:orientation="horizontal"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginEnd="0dp"
+                        android:background="@drawable/bg_shadow"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        tools:ignore="Suspicious0dp">
+
+                        <TextView
+                            android:id="@+id/tv_tasks_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:textSize="16dp"
+                            android:layout_marginEnd="0dp"
+                            android:text="Fleet Plans"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+
+                        <TextView
+                            android:id="@+id/tv_tasks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:textSize="36dp"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="0"
+                            android:textStyle="bold"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="0dip"
+                            android:layout_marginEnd="0dip"
+                            android:layout_marginTop="0dip"
+                            android:layout_marginBottom="0dip"
+                            android:orientation="horizontal"
+                            android:paddingLeft="0dp"
+                            android:paddingTop="0dp"
+                            android:paddingRight="0dp"
+                            android:paddingBottom="5dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingBottom="0dp"
+                                android:layout_marginEnd="5dp"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:layout_gravity="center_vertical"
+                                tools:ignore="Suspicious0dp">
+
+                                <TextView
+                                    android:id="@+id/tv_last_month"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingEnd="10dp"
+                                    android:gravity="center"
+                                    android:layout_gravity="left"
+                                    android:textSize="16dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:text="Targetplan: 0"
+                                    android:textColor="@color/black"
+                                    android:textStyle="normal"
+                                    app:tint="@color/black"
+                                    tools:ignore="UseAppTint" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingBottom="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:layout_gravity="center_vertical"
+                                tools:ignore="Suspicious0dp">
+
+                                <TextView
+                                    android:id="@+id/tv_tasks_percent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="10dp"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="5dp"
+                                    android:gravity="center"
+                                    android:layout_gravity="left"
+                                    android:textSize="16dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    app:tint="@color/white"
+                                    android:drawableLeft="@drawable/ic_polygon_white"
+                                    android:drawablePadding="10dp"
+                                    android:background="@drawable/bg_rounded_green"
+                                    android:text="0 %"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="visible"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dip"
+                    android:layout_marginEnd="0dip"
+                    android:layout_marginTop="0dip"
+                    android:layout_marginBottom="0dip"
+                    android:orientation="horizontal"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginEnd="0dp"
+                        android:background="@drawable/bg_shadow"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        tools:ignore="Suspicious0dp">
+
+                        <TextView
+                            android:id="@+id/tv_contact_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:textSize="16dp"
+                            android:layout_marginEnd="0dp"
+                            android:text="Worker"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+
+                        <TextView
+                            android:id="@+id/tv_contact"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:textSize="36dp"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="0"
+                            android:textStyle="bold"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="0dip"
+                            android:layout_marginEnd="0dip"
+                            android:layout_marginTop="0dip"
+                            android:layout_marginBottom="0dip"
+                            android:orientation="horizontal"
+                            android:paddingLeft="0dp"
+                            android:paddingTop="0dp"
+                            android:paddingRight="0dp"
+                            android:paddingBottom="5dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingBottom="0dp"
+                                android:layout_marginEnd="5dp"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:layout_gravity="center_vertical"
+                                tools:ignore="Suspicious0dp">
+
+                                <TextView
+                                    android:id="@+id/tv_last_month_contact"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingEnd="10dp"
+                                    android:gravity="center"
+                                    android:layout_gravity="left"
+                                    android:textSize="16dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:text="Last Month: 0"
+                                    android:textColor="@color/black"
+                                    android:textStyle="normal"
+                                    app:tint="@color/black"
+                                    tools:ignore="UseAppTint" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingBottom="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:layout_gravity="center_vertical"
+                                tools:ignore="Suspicious0dp">
+
+                                <TextView
+                                    android:id="@+id/tv_contact_percent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="10dp"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="5dp"
+                                    android:gravity="center"
+                                    android:layout_gravity="left"
+                                    android:textSize="16dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    app:tint="@color/white"
+                                    android:drawableLeft="@drawable/ic_polygon_white"
+                                    android:drawablePadding="10dp"
+                                    android:background="@drawable/bg_rounded_green"
+                                    android:text="0 %"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="visible"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dip"
+                    android:layout_marginEnd="0dip"
+                    android:layout_marginTop="0dip"
+                    android:layout_marginBottom="0dip"
+                    android:orientation="horizontal"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginEnd="0dp"
+                        android:background="@drawable/bg_shadow"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        tools:ignore="Suspicious0dp">
+
+                        <TextView
+                            android:id="@+id/tv_call_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:textSize="16dp"
+                            android:layout_marginEnd="0dp"
+                            android:text="Fleet Units"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+
+                        <TextView
+                            android:id="@+id/tv_calls"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:textSize="36dp"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="0"
+                            android:textStyle="bold"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="0dip"
+                            android:layout_marginEnd="0dip"
+                            android:layout_marginTop="0dip"
+                            android:layout_marginBottom="0dip"
+                            android:orientation="horizontal"
+                            android:paddingLeft="0dp"
+                            android:paddingTop="0dp"
+                            android:paddingRight="0dp"
+                            android:paddingBottom="5dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingBottom="0dp"
+                                android:layout_marginEnd="5dp"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:layout_gravity="center_vertical"
+                                tools:ignore="Suspicious0dp">
+
+                                <TextView
+                                    android:id="@+id/tv_last_month_call"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingEnd="10dp"
+                                    android:gravity="center"
+                                    android:layout_gravity="left"
+                                    android:textSize="16dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:text="Last Month: 0"
+                                    android:textColor="@color/black"
+                                    android:textStyle="normal"
+                                    app:tint="@color/black"
+                                    tools:ignore="UseAppTint" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingBottom="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:layout_gravity="center_vertical"
+                                tools:ignore="Suspicious0dp">
+
+                                <TextView
+                                    android:id="@+id/tv_call_percent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="10dp"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="5dp"
+                                    android:gravity="center"
+                                    android:layout_gravity="left"
+                                    android:textSize="16dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    app:tint="@color/white"
+                                    android:drawableLeft="@drawable/ic_polygon_white"
+                                    android:drawablePadding="10dp"
+                                    android:background="@drawable/bg_rounded_green"
+                                    android:text="0 %"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dip"
+                    android:layout_marginEnd="0dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginBottom="0dip"
+                    android:orientation="horizontal"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:background="@drawable/bg_rounded_sky"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:gravity="center"
+                        android:textSize="16dp"
+                        android:drawableRight="@drawable/icon_down_small"
+                        android:drawablePadding="10dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_gravity="right"
+                        android:text="January"
+                        android:textColor="@color/black"
+                        app:tint="@color/black"
+                        tools:ignore="UseAppTint" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dip"
+                    android:layout_marginEnd="0dip"
+                    android:layout_marginTop="0dip"
+                    android:layout_marginBottom="0dip"
+                    android:orientation="horizontal"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:padding="20dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/bg_rounded_blue"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        tools:ignore="Suspicious0dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:textSize="16dp"
+                            android:layout_marginEnd="0dp"
+                            android:text="Total Spend"
+                            android:textColor="@color/white"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:textSize="20dp"
+                            android:textColor="@color/white"
+                            android:layout_marginEnd="0dp"
+                            android:text="$ 20,000.00"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:padding="20dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_yellow"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        tools:ignore="Suspicious0dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:textSize="16dp"
+                            android:layout_marginEnd="0dp"
+                            android:text="Available Balance"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:textSize="20dp"
+                            android:layout_marginEnd="0dp"
+                            android:text="$ 20,000.00"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dip"
+                    android:layout_marginEnd="0dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginBottom="0dip"
+                    android:orientation="horizontal"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.cardview.widget.CardView
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:id="@+id/card1"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:layout_margin="5dp">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp">
+
+                                <TextView
+                                    android:id="@+id/barChartTitleTV"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="left"
+                                    android:text="_2022_statistics"
+                                    android:textColor="@color/blue"
+                                    android:textSize="20sp"
+                                    android:textStyle="normal" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="left"
+                                    android:text="all_products_including_taxes"
+                                    android:textColor="@color/grey"
+                                    android:textSize="15sp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="normal" />
+                                <com.github.mikephil.charting.charts.BarChart
+                                    android:id="@+id/idBarChart"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/llProgressBar"
+        android:visibility="gone"
+        layout="@layout/layout_progress"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

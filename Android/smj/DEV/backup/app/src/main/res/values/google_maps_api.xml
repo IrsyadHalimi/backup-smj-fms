@@ -1,0 +1,24 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=D2:CA:0F:2A:A3:9A:B9:EF:65:9F:58:72:9C:CB:86:2B:DD:5F:F1:41%3Bcom.titaniadev.dropship.shop.activity.map
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    D2:CA:0F:2A:A3:9A:B9:EF:65:9F:58:72:9C:CB:86:2B:DD:5F:F1:41
+
+    SHA-1 certificate fingerprint:
+    D2:CA:0F:2A:A3:9A:B9:EF:65:9F:58:72:9C:CB:86:2B:DD:5F:F1:41
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAFjnRGxro_m4aGTLLOhZ_X2Xkf6f-QXHY</string>
+</resources>

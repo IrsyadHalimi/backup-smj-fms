@@ -1,0 +1,20 @@
+:root {
+
+  --bg-primary: #071220;
+  --bg-secondary: #0d1b2a;
+  --bg-card: #091524;
+
+  --border-color: #1b2940;
+
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+
+  --success: #00d084;
+  --danger: #ff4d4f;
+  --warning: #ffb020;
+
+  --blue: #1d6fff;
+  --purple: #7c3aed;
+  --orange: #f59e0b;
+  --green: #10b981;
+}

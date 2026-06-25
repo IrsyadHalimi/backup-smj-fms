@@ -1,0 +1,37 @@
+.performance-table {
+  overflow-x: auto;
+}
+
+.table-main {
+  width: 100%;
+}
+
+.performance-table th {
+
+  text-align: left;
+
+  padding: 14px;
+
+  color: #8fa3bf;
+
+  border-bottom: 1px solid #1b2940;
+}
+
+.performance-table td {
+
+  padding: 14px;
+
+  border-bottom: 1px solid #132238;
+}
+
+.performance-table tr:hover {
+  background: rgba(255,255,255,.02);
+}
+
+.up {
+  color: #ff4d4f;
+}
+
+.down {
+  color: #00d084;
+}

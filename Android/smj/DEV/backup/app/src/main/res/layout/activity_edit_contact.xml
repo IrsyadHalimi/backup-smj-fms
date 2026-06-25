@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:layout_gravity="top"
+    android:gravity="center"
+    tools:context=".ui.contact.view.EditContactActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="0sp"
+        android:paddingEnd="0sp"
+        android:orientation="vertical"
+        android:paddingBottom="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dip"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:background="@android:color/transparent"
+            app:titleTextAppearance="@style/ActionBar.toolbarTheme"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="0dip"
+                android:layout_marginEnd="20dip"
+                android:layout_marginBottom="0dip"
+                android:orientation="horizontal"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    tools:ignore="Suspicious0dp">
+                    <TextView
+                        android:visibility="visible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="@color/black"
+                        android:text="Update Contact"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="visible"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    tools:ignore="Suspicious0dp">
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/done"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        tools:ignore="Suspicious0dp">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_check"
+                            android:layout_marginEnd="0dp"
+                            android:layout_gravity="center"
+                            app:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_light"
+            android:layout_marginTop="10dp"
+            android:padding="0dip">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:isScrollContainer="true"
+                android:scrollbars="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="top"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:visibility="visible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:text="Contact Information"/>
+
+                    <!-- Start Firstname -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="First Name"/>
+
+                        <EditText
+                            android:id="@+id/et_firstname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Firstname -->
+
+                    <!-- Start Lasttname -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Last Name"/>
+
+                        <EditText
+                            android:id="@+id/et_lastname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Lasttname -->
+
+                    <!-- Start Email -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="ID Number"/>
+
+                        <EditText
+                            android:id="@+id/et_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Email -->
+
+                    <!-- Start Mobile -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Mobile"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_grey"
+                            android:layout_marginTop="0dp"
+                            android:paddingTop="0dp"
+                            android:paddingLeft="0dp"
+                            android:paddingRight="20dp"
+                            android:paddingBottom="0dp"
+                            android:orientation="horizontal">
+                            <com.hbb20.CountryCodePicker
+                                android:id="@+id/phoneTv"
+                                android:visibility="visible"
+                                android:layout_width="100dp"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/grey_light"
+                                android:gravity="left"
+                                android:paddingStart="10dp"
+                                android:text="+62"
+                                app:ccp_showNameCode="false"
+                                app:ccp_defaultNameCode="us"
+                                app:ccp_autoDetectCountry="true"
+                                android:textColor="@color/black"
+                                app:ccp_textSize="16dp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/roboto_regular"/>
+
+                            <EditText
+                                android:id="@+id/et_mobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="18dp"
+                                android:inputType="phone"
+                                android:maxLength="13"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical"
+                                android:background="@null"
+                                android:hint="### - #### - ####"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="0dp"
+                                android:textStyle="bold"
+                                app:maskType="phone"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!-- End Mobile -->
+
+                    <!-- Start Position -->
+                    <LinearLayout
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Position"/>
+
+                        <TextView
+                            android:id="@+id/et_position"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="@color/black"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:drawableRight="@drawable/icon_down_small"
+                            android:drawablePadding="10dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- end position -->
+
+                    <!-- Start Source -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Source"/>
+
+                        <TextView
+                            android:id="@+id/et_source"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="@color/black"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:drawableRight="@drawable/icon_down_small"
+                            android:drawablePadding="10dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Source -->
+
+                    <!-- Start Status -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Status"/>
+
+                        <TextView
+                            android:id="@+id/et_status"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="@color/black"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:drawableRight="@drawable/icon_down_small"
+                            android:drawablePadding="10dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Status -->
+
+                    <!-- Start Reason -->
+                    <LinearLayout
+                        android:id="@+id/ll_reason"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Reason"/>
+
+                        <EditText
+                            android:id="@+id/et_reason"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:inputType="textMultiLine"
+                            android:lines="100"
+                            android:minLines="5"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Reason -->
+
+                    <!-- Start Prospect Quality -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Prospect Quality"/>
+
+                        <RadioGroup
+                            android:id="@+id/et_prospect"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/star_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="0dp"
+                                android:paddingBottom="0dp"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/bg_rounded_grey"
+                                android:button="@null"
+                                android:checked="false"
+                                android:drawableLeft="@drawable/radio_button_star_selector"
+                                android:drawablePadding="5dp"
+                                android:text="1"/>
+                            <RadioButton
+                                android:id="@+id/star_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="0dp"
+                                android:paddingBottom="0dp"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/bg_rounded_grey"
+                                android:button="@null"
+                                android:checked="false"
+                                android:drawableLeft="@drawable/radio_button_star_selector"
+                                android:drawablePadding="5dp"
+                                android:text="2"/>
+                            <RadioButton
+                                android:id="@+id/star_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="0dp"
+                                android:paddingBottom="0dp"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:layout_marginEnd="15dp"
+                                android:background="@drawable/bg_rounded_grey"
+                                android:button="@null"
+                                android:checked="false"
+                                android:drawableLeft="@drawable/radio_button_star_selector"
+                                android:drawablePadding="5dp"
+                                android:text="3"/>
+                            <RadioButton
+                                android:id="@+id/star_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="0dp"
+                                android:paddingBottom="0dp"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/bg_rounded_grey"
+                                android:button="@null"
+                                android:checked="false"
+                                android:drawableLeft="@drawable/radio_button_star_selector"
+                                android:drawablePadding="5dp"
+                                android:text="4"/>
+                            <RadioButton
+                                android:id="@+id/star_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="0dp"
+                                android:paddingBottom="0dp"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:layout_marginEnd="0dp"
+                                android:background="@drawable/bg_rounded_grey"
+                                android:button="@null"
+                                android:checked="false"
+                                android:drawableLeft="@drawable/radio_button_star_selector"
+                                android:drawablePadding="5dp"
+                                android:text="5"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+                    <!-- End Prospect Quality -->
+
+                    <!-- Start Birthday -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Birthday"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_grey"
+                            android:layout_marginTop="0dp"
+                            android:paddingTop="0dp"
+                            android:paddingLeft="0dp"
+                            android:paddingRight="20dp"
+                            android:paddingBottom="0dp"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:visibility="visible"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/grey_light"
+                                android:padding="10dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/roboto_regular"
+                                android:src="@drawable/icon_calendar"/>
+                            <TextView
+                                android:id="@+id/et_birthday"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="18dp"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!-- End Birthday -->
+
+                    <!-- Start Religion -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Religion"/>
+
+                        <TextView
+                            android:id="@+id/et_religion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="@color/black"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:drawableRight="@drawable/icon_down_small"
+                            android:drawablePadding="10dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Religion -->
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:text="Company Information"/>
+
+                    <!-- Start Job Title -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Job Title"/>
+
+                        <EditText
+                            android:id="@+id/et_job_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Job Title -->
+
+                    <!-- Start Company Name -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Company Name"/>
+
+                        <EditText
+                            android:id="@+id/et_company_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Company Name -->
+
+                    <!-- Start Company Phone -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Company Phone"/>
+
+                        <EditText
+                            android:id="@+id/et_company_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone"
+                            android:maxLength="13"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Company Phone -->
+
+                    <!-- Start Google Map -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="left"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="0dip"
+                            android:layout_marginEnd="0dip"
+                            android:layout_marginBottom="0dip"
+                            android:orientation="horizontal"
+                            android:paddingLeft="0dp"
+                            android:paddingTop="0dp"
+                            android:paddingRight="0dp"
+                            android:paddingBottom="0dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="bottom"
+                                android:layout_gravity="bottom"
+                                android:orientation="horizontal"
+                                tools:ignore="Suspicious0dp">
+                                <TextView
+                                    android:visibility="visible"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:gravity="bottom"
+                                    android:layout_gravity="bottom"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textStyle="bold"
+                                    android:textSize="16dp"
+                                    android:textColor="@color/black"
+                                    android:text="Google Map"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="horizontal"
+                                tools:ignore="Suspicious0dp">
+
+                                <Button
+                                    android:id="@+id/btn_location"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:text="+"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <fragment
+                            android:id="@+id/map"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:fitsSystemWindows="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@android:color/transparent"
+                            tools:context=".ui.sales.RegisteredMapActivity" />
+
+                    </LinearLayout>
+                    <!-- End Google Map -->
+
+                    <!-- Start Company Adress -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Company Address"/>
+
+                        <EditText
+                            android:id="@+id/et_company_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:lines="5"
+                            android:minLines="2"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Company Address -->
+
+                    <!-- Start Company State -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Company State"/>
+
+                        <EditText
+                            android:enabled="false"
+                            android:id="@+id/et_company_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grey"
+                            android:hint="use a map to get this"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Company State -->
+
+                    <!-- Start Company City -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Company City"/>
+
+                        <EditText
+                            android:enabled="false"
+                            android:id="@+id/et_company_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grey"
+                            android:hint="use a map to get this"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Company City -->
+
+                    <!-- Start Postal Code -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Postal Code"/>
+
+                        <EditText
+                            android:id="@+id/et_postal_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Postal Code -->
+
+                    <!-- Start Note -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textStyle="bold"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:text="Note"/>
+
+                        <EditText
+                            android:id="@+id/et_note"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:inputType="textMultiLine"
+                            android:lines="100"
+                            android:minLines="5"
+                            android:background="@drawable/bg_rounded_grey"/>
+
+                    </LinearLayout>
+                    <!-- End Note -->
+
+                    <!-- start Add Contact -->
+                    <TextView
+                        android:id="@+id/btn_add_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:text="Update Contact"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:padding="15dp"
+                        android:background="@drawable/bg_rounded_blue"/>
+                    <!-- end Add Contact -->
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <include
+        android:id="@+id/llProgressBar"
+        android:visibility="gone"
+        layout="@layout/layout_progress"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

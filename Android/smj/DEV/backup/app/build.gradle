@@ -1,0 +1,140 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    namespace 'com.smj.app'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.smj.app"
+        minSdk 23
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_13
+        targetCompatibility JavaVersion.VERSION_13
+    }
+    kotlinOptions {
+        jvmTarget = '13'
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig = true
+    }
+    dataBinding{
+        //noinspection DataBindingWithoutKapt
+        enabled true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:19.0.3'
+    implementation 'androidx.compose.ui:ui-text-android:1.7.0'
+    implementation 'androidx.activity:activity:1.9.2'
+    implementation 'androidx.compose.runtime:runtime-android:1.7.2'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+
+    implementation 'androidx.databinding:databinding-runtime:8.5.2'
+
+    implementation 'androidx.activity:activity-ktx:1.9.1'
+    implementation 'androidx.fragment:fragment-ktx:1.8.2'
+
+    //livedata
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.8.4'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4'
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.4'
+
+    //charts
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // Google MAPS
+    implementation 'com.google.android.gms:play-services-maps:19.0.0'
+    // Auto Complete Place & location
+    implementation 'com.google.android.gms:play-services-places:17.1.0'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+    // Maps Utils
+    implementation 'com.google.maps.android:android-maps-utils:3.8.2'
+
+    implementation 'com.google.android.gms:play-services-auth:21.2.0'
+
+    //firebase
+    implementation 'androidx.browser:browser:1.8.0'
+    implementation platform('com.google.firebase:firebase-bom:33.1.2')
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:19.0.3'
+    implementation 'com.google.firebase:firebase-analytics-ktx:22.0.2'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.google.firebase:firebase-auth-ktx:23.0.0'
+    implementation 'com.google.firebase:firebase-database-ktx:21.0.0'
+    implementation 'com.google.firebase:firebase-storage-ktx:21.0.0'
+    implementation 'com.google.firebase:firebase-messaging:24.0.0'
+
+    implementation 'com.github.MasayukiSuda:BubbleLayout:v1.2.1'
+
+    implementation 'com.hbb20:ccp:2.7.3'
+
+    // Google MAPS
+    implementation 'com.google.android.gms:play-services-maps:19.0.0'
+    // Auto Complete Place & location
+    implementation 'com.google.android.gms:play-services-places:17.1.0'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+    // Maps Utils
+    implementation 'com.google.maps.android:android-maps-utils:3.8.2'
+    implementation 'com.google.android.gms:play-services-gcm:17.0.0'
+
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    // Image Loading
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    // Support Library
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    implementation 'androidx.viewpager2:viewpager2:1.1.0'
+    implementation 'androidx.exifinterface:exifinterface:1.3.7'
+
+    //Rounded Image
+    implementation "com.makeramen:roundedimageview:2.3.0"
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'com.facebook.shimmer:shimmer:0.5.0@aar'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.14'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.14'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    def retrofit_version = '2.11.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+
+    implementation 'com.facebook.android:facebook-android-sdk:17.0.1'
+
+    implementation 'androidx.work:work-runtime:2.9.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'
+
+    implementation 'io.michaelrocks:libphonenumber-android:8.13.35'
+}

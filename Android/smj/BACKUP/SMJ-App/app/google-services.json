@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "45925747983",
+    "firebase_url": "https://smj-app-94dec-default-rtdb.firebaseio.com",
+    "project_id": "smj-app-94dec",
+    "storage_bucket": "smj-app-94dec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45925747983:android:26bf00b6c8e8d505c5427a",
+        "android_client_info": {
+          "package_name": "com.smj.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45925747983-vvi19edl4tv30kn3bpab9rri12ahop03.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smj.app",
+            "certificate_hash": "856594405c28afdb6aa5e3aed2439c28ab076084"
+          }
+        },
+        {
+          "client_id": "45925747983-dssk1mfiudepr4poj0pcrdp2juiqas7d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBamGIrCNYLnzZy8wZ0pAv1mYDNc3_WUZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45925747983-dssk1mfiudepr4poj0pcrdp2juiqas7d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">SMJ Apps</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="exception_pound_count">POUND count must be same for maskPattern and returnMaskPattern</string>
+    <string name="exception_mask_pound">Custom mask maskPattern must contain #</string>
+    <string name="exception_mask_pound_static">Static mask must contain maskPattern</string>
+    <string name="exception_return_pound">Custom mask returnType must contain #</string>
+    <string name="exception_unselected_mask">maskType must be selected</string>
+
+    <string name="please_write_fullname">Please write fullname.</string>
+    <string name="please_write_email">Please write email.</string>
+    <string name="please_write_id">Please write ID Number.</string>
+    <string name="please_write_password">Please write password.</string>
+    <string name="please_write_phone">Please write Phone Number.</string>
+
+    <string name="connection_status">No connection internet</string>
+    <string name="pengawas">Pengawas</string>
+</resources>

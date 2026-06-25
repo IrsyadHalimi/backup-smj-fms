@@ -1,0 +1,372 @@
+/* Container Utama Layout Dashboard */
+.dashboard-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 350px; /* Kolom 1, Kolom 2, dan Kolom Kanan khusus AI Panel */
+  grid-template-rows: auto auto 1fr;    /* Baris 1 (Metrics), Baris 2 (Charts), Baris 3 (Table) */
+  gap: 20px;
+  padding: 20px;
+  align-items: start;
+}
+
+/* --- BARIS 1: METRIC CARDS (1 BARIS, SEMUA KOLOM FULL) --- */
+.metrics-row-container {
+  grid-column: 1 / 3; /* Membentang horizontal dari ujung Kolom 1 sampai ujung Kolom 2 */
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* DIPAKSA: 6 kartu berjejer lurus menyamping dalam 1 baris */
+  gap: 15px; /* Jarak antar kartu sedikit dikecilkan agar muat dalam 1 baris di desktop */
+}
+
+/* Baris 2: Letak Chart Trend di Kolom 1 */
+.chart-trend-container {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* Baris 2: Letak Chart Model di Kolom 2 */
+.chart-model-container {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Baris 3: Tabel mengambil ruang kolom 1 hingga kolom 2 */
+.table-row-container {
+  grid-column: 1 / 3;
+  grid-row: 3;
+}
+
+/* KOLOM KANAN TOTAL: AI Panel mengambil baris 1 sampai baris 3 */
+.ai-panel-sidebar {
+  grid-column: 3;
+  grid-row: 2 / 4; 
+  height: 100%;
+}
+
+.ai-panel-sidebar .analysis-panel {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================================
+   --- RESPONSIVE LAYOUT (BREAKPOINTS) ---
+   ========================================================================== */
+
+/* 1. LAYOUT UNTUK LAPTOP KECIL / TABLET LANDSCAPE (Maksimal Lebar 1200px) */
+@media screen and (max-width: 1300px) {
+  /* Jika layar laptop agak kecil, 6 baris menyamping akan terlalu sempit. 
+     Kita ubah menjadi 3 kolom x 2 baris agar tulisan di dalam kartu tidak kepotong */
+  .metrics-row-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .dashboard-grid-layout {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .table-row-container {
+    grid-column: 1 / 3;
+  }
+
+  .ai-panel-sidebar {
+    grid-column: 1 / 3;
+    grid-row: 4;
+    height: auto;
+  }
+}
+
+/* 2. LAYOUT UNTUK TABLET PORTRAIT & MOBILE (Maksimal Lebar 768px) */
+@media screen and (max-width: 768px) {
+  .dashboard-grid-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .metrics-row-container {
+    grid-column: 1;
+    grid-row: 1;
+    grid-template-columns: repeat(2, 1fr); /* Di tablet/HP tegak, lari ke 2 kolom vertikal */
+  }
+
+  .chart-trend-container { grid-column: 1; grid-row: 2; }
+  .chart-model-container { grid-column: 1; grid-row: 3; }
+  
+  .table-row-container {
+    grid-column: 1;
+    grid-row: 4;
+    overflow-x: auto;
+  }
+
+  .ai-panel-sidebar {
+    grid-column: 1;
+    grid-row: 5;
+  }
+}
+
+/* 3. LAYOUT MOBILE SANGAT KECIL (Maksimal Lebar 480px) */
+@media screen and (max-width: 480px) {
+  .metrics-row-container {
+    grid-template-columns: 1fr; /* Di HP potrait, berderet 1 kolom penuh kebawah */
+  }
+}
+
+/* ==========================================================================
+   --- FIX SKELETON LOADER ANIMATION ---
+   ========================================================================== */
+
+/* 1. Base Class Skeleton (Wajib memiliki background dasar dan display) */
+.skeleton {
+  background-color: #e5e7eb !important; /* Warna abu-abu terang standar Tailwind/Bootstrap */
+  border-radius: 6px;
+  display: block; /* Memastikan div kosong memiliki ruang */
+  position: relative;
+  overflow: hidden;
+  
+  /* Jalankan animasi berdenyut (pulse) */
+  animation: skeleton-pulse 1.5s infinite ease-in-out;
+}
+
+/* 2. Definisi Animasi Pulse (Berdenyut) */
+@keyframes skeleton-pulse {
+  0% {
+    opacity: 1;
+    background-color: #e5e7eb;
+  }
+  50% {
+    opacity: 0.4;
+    background-color: #f3f4f6; /* Menjadi lebih terang di tengah animasi */
+  }
+  100% {
+    opacity: 1;
+    background-color: #e5e7eb;
+  }
+}
+
+/* 3. MENENTUKAN UKURAN (Wajib agar tidak 0px) */
+
+/* Ukuran untuk Title Utama */
+.skeleton-title {
+  width: 60%;
+  height: 24px;
+  margin-bottom: 20px;
+}
+
+/* Ukuran untuk Sub-Judul Seksi */
+.skeleton-sub-title {
+  width: 40%;
+  height: 18px;
+  margin-bottom: 12px;
+}
+
+/* Ukuran untuk Baris Teks/List (li) */
+.skeleton-text {
+  width: 100%;
+  height: 14px;
+  margin-bottom: 10px;
+}
+
+/* Ukuran untuk Blok Paragraf (Kesimpulan) */
+.skeleton-text-block {
+  width: 100%;
+  height: 60px; /* Lebih tinggi untuk mensimulasikan kotak teks paragraf */
+  margin-top: 8px;
+}
+
+/* Helper Utilities untuk variasi panjang baris skeleton */
+.w-75 { 
+  width: 75% !important; 
+}
+
+/* 4. Reset style list bawaan khusus saat skeleton aktif agar tidak menumpuk */
+.skeleton-active ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+.skeleton-active li {
+  list-style: none !important;
+}
+
+/* ==========================================================================
+   1. KARTU UTAMA (STATE SUKSES)
+   ========================================================================== */
+.analysis-panel {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0; /* Border abu-abu tipis transparan */
+  border-radius: 12px;       /* Sudut melengkung halus modern */
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Judul Utama Panel AI */
+.analysis-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e1b4b; /* Indigo gelap eksekutif */
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Efek visual ikon kilatan AI (Opsional jika Anda ingin tambah emoji/icon nanti) */
+.analysis-title::before {
+  content: "✨";
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   2. SEKSI KONTEN & GAYA LIST LI
+   ========================================================================== */
+.analysis-section {
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #f8fafc; /* Latar belakang abu-abu super soft */
+  border: 1px solid #f1f5f9;
+}
+
+.analysis-section:last-child {
+  margin-bottom: 0;
+}
+
+.analysis-section h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569; /* Slate gray senior */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Pengaturan List Poin Insights & Rekomendasi */
+.analysis-section ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.analysis-section li {
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.analysis-section li:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Variasi Khusus: Seksi Kesimpulan (Danger/Aksen Alert) --- */
+.analysis-section.danger {
+  background-color: #fff7ed; /* Soft Amber / Orange pastel */
+  border: 1px solid #ffedd5;
+  border-left: 4px solid #f97316; /* Garis aksen penanda krusial */
+}
+
+.analysis-section.danger h4 {
+  color: #c2410c; /* Teks oranye tua pekat */
+}
+
+.analysis-section.danger p {
+  margin: 0;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: #7c2d12;
+}
+
+/* ==========================================================================
+   3. ANIMASI SKELETON LOADER (TIDAK MERUSAK WARNA UTAMA)
+   ========================================================================== */
+/* Indikator base element untuk animasi denyut */
+.skeleton {
+  background-color: #e2e8f0 !important;
+  border-radius: 6px;
+  display: block;
+  animation: skeleton-pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes skeleton-pulse {
+  0% { opacity: 1; background-color: #e2e8f0; }
+  50% { opacity: 0.5; background-color: #f1f5f9; }
+  100% { opacity: 1; background-color: #e2e8f0; }
+}
+
+/* Aturan ukuran geometri tiruan kerangka teks */
+.skeleton-title {
+  width: 140px;
+  height: 22px;
+  margin-bottom: 20px;
+}
+
+.skeleton-sub-title {
+  width: 100px;
+  height: 14px;
+  margin-bottom: 12px;
+}
+
+.skeleton-text {
+  width: 100%;
+  height: 14px;
+  margin-bottom: 10px;
+}
+
+.skeleton-text-block {
+  width: 100%;
+  height: 52px;
+}
+
+/* Helper pembagi baris kerangka */
+.w-75 { width: 75% !important; }
+
+/* Menjinakkan list bullet bawaan html khusus saat render skeleton */
+.skeleton-active ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+/* ==========================================================================
+   4. TAMPILAN KARTU ERROR / STATE GAGAL
+   ========================================================================== */
+.analysis-panel.error-card {
+  background-color: #b6464619; /* Merah pastel halus */
+  border: 1px solid #fee2e2;
+  border-left: 4px solid #ef4444; /* Tegasan border merah solid */
+  
+}
+
+.analysis-panel.error-card .analysis-title {
+  border-bottom: 1px solid #fee2e2;
+  color: #ffffff;
+}
+
+.error-card-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.error-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.error-card-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ffffff;
+  line-height: 1.5;
+}

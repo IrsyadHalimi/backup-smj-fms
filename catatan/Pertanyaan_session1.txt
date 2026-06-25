@@ -1,0 +1,15 @@
+1. Laporan Ritase
+   - fleet yang di dalam nya terdapat 
+     - 1 pengawas, 
+     - 1 unit exa, 
+     - beberapa unti HD atau DT
+   - Laporan Ritase bisa OB atau Batu Bara
+   - 
+
+
+Pertanyaan
+1. Apakah 1 fleet itu hanya ada 1 EXA ?
+2. Apakah 1 fleet terdapat banyak HD/DT ?
+3. Apakah 1 fleet untuk memproses 2 jenis material OB dan Batu Bara ?
+4. HIM Awal dan HIM Akhir di tentukan berdasarkan apa ?
+5. Apakah 1 pengawas bisa mengawasi lebih dari 1 fleet ?

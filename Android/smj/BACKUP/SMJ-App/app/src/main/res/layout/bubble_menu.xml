@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daasuu.bl.BubbleLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="0dp"
+    app:bl_arrowDirection="top"
+    app:bl_arrowHeight="12dp"
+    app:bl_arrowPosition="280dp"
+    app:bl_arrowWidth="7dp"
+    app:bl_bubbleColor="@color/white"
+    android:orientation="vertical"
+    app:bl_strokeWidth="0.5dp"
+    app:bl_cornersRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bubble_add_unit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="Tambah/Kurangi Hauler"
+                android:drawableLeft="@drawable/ic_dump_truck"
+                android:drawablePadding="10dp"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <View
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_light"
+            android:layout_marginTop="5dp"/>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bubble_lost_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="Lost Time"
+                android:drawableLeft="@drawable/ic_time"
+                android:drawablePadding="10dp"
+                android:textColor="@android:color/black"  />
+
+        </LinearLayout>
+
+        <View
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_light"
+            android:layout_marginTop="5dp"/>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bubble_change_exa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="Ganti Exavator"
+                android:drawableLeft="@drawable/ic_excavator"
+                android:drawablePadding="10dp"
+                android:textColor="@android:color/black"  />
+
+        </LinearLayout>
+
+        <View
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_light"
+            android:layout_marginTop="5dp"/>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bubble_change_operator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="Ganti Operator Exavator"
+                android:drawableLeft="@drawable/ic_worker"
+                android:drawablePadding="10dp"
+                android:textColor="@android:color/black"  />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</com.daasuu.bl.BubbleLayout>

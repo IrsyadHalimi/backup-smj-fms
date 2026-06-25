@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--    <item android:drawable="@color/red_dark" android:state_selected="true"/>-->
+    <item android:state_selected="true">
+        <layer-list>
+            <item android:bottom="12dp" android:left="3dp" android:top="12dp" android:right="3dp">
+                <shape>
+                    <gradient android:angle="0" android:endColor="@color/blue" android:startColor="@color/blue" />
+                    <stroke android:width="0dp" android:color="@color/black" />
+                    <corners android:radius="20dp" />
+                    <padding android:bottom="0dp" android:left="0dp"
+                        android:right="0dp" android:top="0dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:drawable="@color/white"/>
+</selector>

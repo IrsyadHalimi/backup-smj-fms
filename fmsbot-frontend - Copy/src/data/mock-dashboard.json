@@ -1,0 +1,134 @@
+{
+  "summary": {
+    "totalFuel": 523456,
+    "fuelChange": -8.42,
+    "workingHour": 8742,
+    "workingHourChange": 5.18,
+    "avgFuelRate": 59.89,
+    "avgFuelRateChange": -12.35,
+    "bestModel": "PC1250-8",
+    "bestRate": 38.21,
+    "worstModel": "HD785-7",
+    "worstRate": 101.87,
+    "totalUnit": 32,
+    "activeUnit": 29,
+    "inactiveUnit": 3
+  },
+
+  "fuelTrend": [
+    { "day": "1 May", "rate": 52 },
+    { "day": "2 May", "rate": 60 },
+    { "day": "3 May", "rate": 55 },
+    { "day": "4 May", "rate": 44 },
+    { "day": "5 May", "rate": 50 },
+    { "day": "6 May", "rate": 52 },
+    { "day": "7 May", "rate": 64 },
+    { "day": "8 May", "rate": 61 },
+    { "day": "9 May", "rate": 62 },
+    { "day": "10 May", "rate": 78 },
+    { "day": "11 May", "rate": 65 },
+    { "day": "12 May", "rate": 55 },
+    { "day": "13 May", "rate": 48 },
+    { "day": "14 May", "rate": 63 },
+    { "day": "15 May", "rate": 65 },
+    { "day": "16 May", "rate": 68 },
+    { "day": "17 May", "rate": 58 },
+    { "day": "18 May", "rate": 57 },
+    { "day": "19 May", "rate": 69 },
+    { "day": "20 May", "rate": 59 },
+    { "day": "21 May", "rate": 62 },
+    { "day": "22 May", "rate": 51 },
+    { "day": "23 May", "rate": 66 },
+    { "day": "24 May", "rate": 75 },
+    { "day": "25 May", "rate": 67 },
+    { "day": "26 May", "rate": 52 },
+    { "day": "27 May", "rate": 78 },
+    { "day": "28 May", "rate": 65 },
+    { "day": "29 May", "rate": 52 },
+    { "day": "30 May", "rate": 66 },
+    { "day": "31 May", "rate": 98 }
+  ],
+
+  "modelRates": [
+    { "model": "PC1250-8", "rate": 38.21 },
+    { "model": "HD465-7", "rate": 45.67 },
+    { "model": "PC2000-8", "rate": 52.34 },
+    { "model": "PC800-8", "rate": 56.78 },
+    { "model": "HD605-7", "rate": 65.42 },
+    { "model": "HD785-7", "rate": 84.15 },
+    { "model": "HD785-7R", "rate": 101.87 }
+  ],
+
+  "units": [
+    {
+      "id": 1,
+      "model": "PC1250-8",
+      "fuel": 95762,
+      "hour": 2507,
+      "fuelRate": 38.21,
+      "vsAverage": -36.22,
+      "performance": "Sangat Efisien",
+      "trend": [35,40,38,45,42,47,38]
+    },
+    {
+      "id": 2,
+      "model": "HD465-7",
+      "fuel": 88456,
+      "hour": 1939,
+      "fuelRate": 45.67,
+      "vsAverage": -23.75,
+      "performance": "Efisien",
+      "trend": [42,46,43,50,47,44,46]
+    },
+    {
+      "id": 3,
+      "model": "PC2000-8",
+      "fuel": 128765,
+      "hour": 2462,
+      "fuelRate": 52.34,
+      "vsAverage": -12.61,
+      "performance": "Efisien",
+      "trend": [51,54,53,56,55,54,52]
+    },
+    {
+      "id": 4,
+      "model": "PC800-8",
+      "fuel": 96812,
+      "hour": 1706,
+      "fuelRate": 56.78,
+      "vsAverage": -5.19,
+      "performance": "Cukup",
+      "trend": [54,57,56,60,58,55,57]
+    },
+    {
+      "id": 5,
+      "model": "HD605-7",
+      "fuel": 107213,
+      "hour": 1638,
+      "fuelRate": 65.42,
+      "vsAverage": 9.23,
+      "performance": "Boros",
+      "trend": [61,63,66,68,64,66,65]
+    },
+    {
+      "id": 6,
+      "model": "HD785-7",
+      "fuel": 151892,
+      "hour": 1805,
+      "fuelRate": 84.15,
+      "vsAverage": 40.51,
+      "performance": "Boros",
+      "trend": [80,82,86,85,88,84,83]
+    },
+    {
+      "id": 7,
+      "model": "HD785-7R",
+      "fuel": 189556,
+      "hour": 1860,
+      "fuelRate": 101.87,
+      "vsAverage": 70.09,
+      "performance": "Sangat Boros",
+      "trend": [96,100,103,99,105,101,102]
+    }
+  ]
+}

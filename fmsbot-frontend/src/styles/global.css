@@ -1,0 +1,31 @@
+@import "./variables.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-primary);
+  color: white;
+  font-family:
+    Inter,
+    Segoe UI,
+    sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+button,
+select {
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp">
+
+        <!--text view for displaying course name-->
+        <TextView
+            android:id="@+id/tv_title_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Setting up default filter time"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/radio_group_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title_sheet"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="left"
+            android:gravity="center_vertical">
+
+            <RadioButton
+                android:id="@+id/rb_today"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Today"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rb_week"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="This Week"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rb_month"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="This Month"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rb_year"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="This Year"
+                android:checked="true" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_seting_up_default_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Update Setting Up"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
