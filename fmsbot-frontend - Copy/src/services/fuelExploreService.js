@@ -8,7 +8,9 @@ export const getFuelExploreData = async (startDate, endDate) => {
     if (endDate) params.append("end_date", endDate);
 
     const queryString = params.toString() ? `?${params.toString()}` : "";
-
+    console.log(
+        `${BASE_URL}/api/fuel-explore/${queryString}`
+    );
     const response = await fetch(
       `${BASE_URL}/api/fuel-explore/${queryString}`
     );
@@ -31,7 +33,7 @@ export const getFuelExploreUnits = async ({ page = 1, limit = 50, startDate, end
     if (endDate) params.append("end_date", endDate);
 
     const response = await fetch(
-      `${BASE_URL}/api/fuel-explore/units/?${params.toString()}`
+      `${BASE_URL}/api/fuel-explore/units/?${params}`
     );
 
     if (!response.ok) {

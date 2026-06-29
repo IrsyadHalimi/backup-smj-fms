@@ -1,6 +1,9 @@
-import React, { useState } from "react";
 import { Calendar, Filter } from "lucide-react";
 import "../../styles/css/DateRangePicker.css";
+import React, {
+  useState,
+  useEffect
+} from "react";
 
 export default function DateRangePicker({ onApplyFilter, initialStart = "", initialEnd = "" }) {
   const [startDate, setStartDate] = useState(initialStart);
@@ -10,10 +13,22 @@ export default function DateRangePicker({ onApplyFilter, initialStart = "", init
   const handleApply = (e) => {
     e.preventDefault();
     if (startDate && endDate) {
+      if (startDate > endDate) {
+          alert("Tanggal mulai tidak boleh melebihi tanggal selesai");
+          return;
+      }
       onApplyFilter(startDate, endDate);
       setIsOpen(false);
     }
   };
+
+  useEffect(() => {
+    setStartDate(initialStart);
+  }, [initialStart]);
+
+  useEffect(() => {
+    setEndDate(initialEnd);
+  }, [initialEnd]);
 
   return (
     <div className="date-picker-wrapper">
@@ -54,7 +69,7 @@ export default function DateRangePicker({ onApplyFilter, initialStart = "", init
               <button type="button" className="btn-cancel" onClick={() => setIsOpen(false)}>
                 Batal
               </button>
-              <button type="submit" className="btn-apply">
+              <button type="submit" disabled={!startDate || !endDate} className="btn-apply">
                 <Filter size={14} /> Terapkan
               </button>
             </div>

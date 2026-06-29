@@ -29,3 +29,111 @@
   color: #ff4d4f;
   background: rgba(255,77,79,.15);
 }
+
+/* ==========================================
+   PAGINATION CONTROLS
+   ========================================== */
+
+.pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding: 12px 8px;
+  font-size: 0.85rem;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Pagination Interactive Elements */
+.pagination-buttons button,
+.pagination-buttons select {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-buttons button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* ==========================================
+   THEME ADAPTIVE STYLES (Dark & Light)
+   ========================================== */
+
+/* --- DARK THEME (Mission Control) --- */
+.theme-dark .performance-table th {
+  background-color: rgba(23, 33, 48, 0.5); /* Slate 800 */
+  color: #d0dae9; /* Slate 400 */
+}
+
+.theme-dark .performance-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.theme-dark .pagination-controls {
+  color: #94a3b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.theme-dark .pagination-buttons button {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
+}
+
+.theme-dark .pagination-buttons button:not(:disabled):hover {
+  background-color: #334155;
+  border-color: #475569;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.2); /* Soft neon glow */
+}
+
+.theme-dark .pagination-buttons select {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
+}
+
+/* --- LIGHT THEME (Corporate Clean) --- */
+.theme-light .performance-table th {
+  background-color: #f1f5f9; /* Slate 100 */
+  color: #3e4348; /* Slate 600 */
+}
+
+.theme-light .performance-table td {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.theme-light .performance-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.theme-light .pagination-controls {
+  color: #475569;
+  border-top: 1px solid #e2e8f0;
+}
+
+.theme-light .pagination-buttons button {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+}
+
+.theme-light .pagination-buttons button:not(:disabled):hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.theme-light .pagination-buttons select {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+}

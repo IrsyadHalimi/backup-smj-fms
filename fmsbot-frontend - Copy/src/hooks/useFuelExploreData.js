@@ -25,5 +25,8 @@ export const useFuelExploreData = (startDate, endDate) => {
     fetchDashboard();
     
     // Efek ini akan berjalan ulang secara otomatis begitu isi datepicker diganti
-  }, [startDate, endDate, setDashboard, setLoadingDashboard]);
+  }, [
+    startDate,
+    endDate
+  ]);
 };

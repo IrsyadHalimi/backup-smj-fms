@@ -27,17 +27,6 @@ export default function TableToolbar() {
             onChange={(e) => setSearch(e.target.value)}
             />
         </div>
-
-        <div className="toolbar-actions">
-            <button className="toolbar-btn">
-            Filter
-            </button>
-
-            <button className="toolbar-btn">
-            Export
-            </button>
-        </div>
-
     </div>
   );
 }

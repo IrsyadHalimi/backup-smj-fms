@@ -18,19 +18,40 @@ import { useFuelTrend, useModelRates, useUnits } from "../../store/fuelExploreSe
 import { themes } from "../../helpers/styles/themeConfig";
 
 export default function FuelExplorer() {
-  useFuelExploreData();
-
+  
   const [isDarkMode, setIsDarkMode] = useState(true);
   const fuelTrend = useFuelTrend();
   const modelRates = useModelRates();
   const dashboard = useFuelExploreStore(state => state.dashboard);
-  const [dates, setDates] = useState({ start: "", end: "" });
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+
+  const [dates, setDates] = useState({
+      start:"",
+      end:""
+  });
+  const [startDate,setStartDate] = useState("");
+  const [endDate,setEndDate] = useState("");
+
   const activeTheme = isDarkMode ? themes.dark : themes.standard;
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(50);
+
+  useFuelExploreUnits(
+    page,
+    limit,
+    startDate,
+    endDate
+  );
+  useFuelExploreData(
+    startDate,
+    endDate
+  );
   
-  useFuelExploreUnits(1, 50);
-  useFuelExploreData(dates.start, dates.end);
+  useEffect(() => {
+    console.log({
+        startDate,
+        endDate
+    });
+  }, [startDate, endDate]);
   const units = useUnits();
 
   if (!dashboard) return <div>Loading...</div>;
@@ -42,6 +63,7 @@ export default function FuelExplorer() {
     "fueltrend": fuelTrend,
     "modelRates": modelRates,
   };
+
 
   // KONDISI WARNA IKON BERDASARKAN STATUS IS_DARK_MODE
   // Jika True: Menggunakan spektrum neon menyala (Mission Control Vibe)
@@ -97,7 +119,13 @@ export default function FuelExplorer() {
         <div className="table-row-container">
          
             <TableToolbar isDarkMode={isDarkMode} />
-            <PerformanceTable data={units} isDarkMode={isDarkMode} />
+            <PerformanceTable 
+              isDarkMode={isDarkMode} 
+              page={page}
+              setPage={setPage}
+              limit={limit}
+              setLimit={setLimit}
+            />
         </div>
 
         {/* KOLOM KANAN (Baris 1 s/d Baris 3): AI Analysis Panel */}
